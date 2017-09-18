@@ -48,7 +48,7 @@ public class DemoApplicationTests {
         }
     }
 
-//    @Test
+//    @resource
 //    public void testTimeout() throws Exception {
 //        ServletWebServerApplicationContext context = (ServletWebServerApplicationContext) this.applicationContext;
 //        TomcatWebServer embeddedServletContainer = (TomcatWebServer) context
