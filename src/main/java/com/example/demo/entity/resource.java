@@ -17,11 +17,17 @@ public class resource {
 
     @Id
     private Long id;
-
     @Convert(converter = JpaListJsonConverter.class)
     private List<Color> insideColor;
 
     @Convert(converter = JpaListJsonConverter.class)
     private List<Hub> hubs;
 
+//    protected JavaType getJavaType(Class<?> clazz) {
+//        if (List.class.isAssignableFrom(clazz)) {
+//            return TypeFactory.collectionType(ArrayList.class, MyBean.class);
+//        } else {
+//            return super.getJavaType(clazz);
+//        }
+//    }
 }
