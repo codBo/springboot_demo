@@ -13,7 +13,7 @@ public class MessageUtil {
                 successMessage = new ResponseMessage<>();
                 successMessage.setData("");
                 successMessage.setMessage("成功");
-                successMessage.setCode(0);
+                successMessage.setCode(200);
             }
         }
         return successMessage;
@@ -22,7 +22,7 @@ public class MessageUtil {
     public static <T> ResponseMessage getSuccessMessage(T data) {
 
         ResponseMessage<T> successMessage = new ResponseMessage<T>();
-        successMessage.setCode(0);
+        successMessage.setCode(200);
         successMessage.setMessage("成功");
         successMessage.setData(data);
         return successMessage;

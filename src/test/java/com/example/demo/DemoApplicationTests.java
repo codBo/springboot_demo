@@ -11,6 +11,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.StreamUtils;
 
+import javax.annotation.Resource;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.Charset;
 import java.util.zip.GZIPInputStream;
@@ -48,7 +49,7 @@ public class DemoApplicationTests {
         }
     }
 
-//    @resource
+//    @Resource
 //    public void testTimeout() throws Exception {
 //        ServletWebServerApplicationContext context = (ServletWebServerApplicationContext) this.applicationContext;
 //        TomcatWebServer embeddedServletContainer = (TomcatWebServer) context
@@ -58,7 +59,7 @@ public class DemoApplicationTests {
 //        int timeout = ((AbstractProtocol<?>) protocolHandler).getConnectionTimeout();
 //        assertThat(timeout).isEqualTo(5000);
 //    }
-//
+
 
 
 }
