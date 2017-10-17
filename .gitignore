@@ -22,3 +22,7 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+#config
+src/main/java/resources/application-dev.properties (why not work)
+#src/main/java/com/example/demo/controller/AppleController.java

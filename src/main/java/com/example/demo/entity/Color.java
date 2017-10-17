@@ -13,7 +13,8 @@ public class Color implements Serializable{
     private static final long serialVersionUID = 4125289746708872472L;
 
     private String thumb;
-    private int count;
+    private int    count;
     private String text;
     private String value;
+
 }

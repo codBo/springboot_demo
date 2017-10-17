@@ -1,12 +1,9 @@
 package com.example.demo.entity;
 
-import com.example.demo.util.JpaListJsonConverter;
+import com.example.demo.util.JpaConverter;
 import lombok.Data;
 
-import javax.persistence.Convert;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -17,20 +14,17 @@ import java.util.List;
 public class Resource {
 
     @Id
-    private Long id;
-//    @Convert(converter = JpaListJsonConverter.class)
-    @Lob
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Convert(converter = JpaConverter.class)
     private List<Color> insideColor;
 
-//    @Convert(converter = JpaListJsonConverter.class)
-    @Lob
-    private List<Hub> hubs;
+    @Convert(converter = JpaConverter.class)
+    private List<String> strings;
 
-//    protected JavaType getJavaType(Class<?> clazz) {
-//        if (List.class.isAssignableFrom(clazz)) {
-//            return TypeFactory.collectionType(ArrayList.class, MyBean.class);
-//        } else {
-//            return super.getJavaType(clazz);
-//        }
-//    }
+//    @Convert(converter = JpaListJsonConverter.class)
+//    @Lob
+//    private List<Hub> hubs;
+
 }
