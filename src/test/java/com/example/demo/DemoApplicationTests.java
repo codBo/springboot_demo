@@ -11,7 +11,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.StreamUtils;
 
-import javax.annotation.Resource;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.Charset;
 import java.util.zip.GZIPInputStream;

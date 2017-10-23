@@ -3,11 +3,13 @@ package com.example.demo.controller;
 import com.example.demo.dto.ResponseMessage;
 import com.example.demo.entity.Apple;
 import com.example.demo.entity.Resource;
+import com.example.demo.exception.MyException;
 import com.example.demo.repository.ResourceRepository;
 import com.example.demo.util.MessageUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -66,4 +68,13 @@ public class DemoController {
         return MessageUtil.getCountV2();
     }
 
+    @GetMapping("/error")
+    public Object error() throws Exception {
+        throw new Exception();
+    }
+
+    @RequestMapping("/json")
+    public String json() throws MyException {
+        throw new MyException("发生错误2");
+    }
 }
