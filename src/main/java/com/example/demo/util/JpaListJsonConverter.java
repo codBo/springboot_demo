@@ -2,13 +2,11 @@ package com.example.demo.util;
 
 import javax.persistence.AttributeConverter;
 
-import com.example.demo.entity.Color;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
-import java.util.List;
 
 /**
  * Created by brian on 2017/9/14.

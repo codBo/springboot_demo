@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.dto;
 
 import lombok.Data;
 
@@ -8,11 +8,13 @@ import java.io.Serializable;
  * Created by mac on 09/09/2017.
  */
 @Data
-public class Hub {
+public class Color implements Serializable{
 
-    private static final long serialVersionUID = -9158733904773868788L;
+    private static final long serialVersionUID = 4125289746708872472L;
+
     private String thumb;
-    private String count;
+    private int    count;
     private String text;
     private String value;
+
 }

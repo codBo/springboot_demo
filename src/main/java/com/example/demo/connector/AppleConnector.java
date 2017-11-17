@@ -1,6 +1,6 @@
 package com.example.demo.connector;
 
-import com.example.demo.entity.Apple;
+import com.example.demo.dto.Apple;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;

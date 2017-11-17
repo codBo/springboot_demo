@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.example.demo.dto.Color;
 import com.example.demo.util.JpaConverter;
 import lombok.Data;
 
@@ -23,6 +24,7 @@ public class Resource {
     @Convert(converter = JpaConverter.class)
     private List<String> strings;
 
+    private String name;
 //    @Convert(converter = JpaListJsonConverter.class)
 //    @Lob
 //    private List<Hub> hubs;

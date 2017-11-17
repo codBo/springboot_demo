@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.User;
+import com.example.demo.dto.User;
+import com.example.demo.exception.MyException;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -16,9 +17,10 @@ public class UserController {
 
     @ApiOperation(value="获取用户列表", notes="")
     @RequestMapping(value={""}, method= RequestMethod.GET)
-    public List<User> getUserList() {
+    public List<User> getUserList() throws MyException {
 
-        return new ArrayList<>(users.values());
+        throw new MyException("错了错了");
+//        return new ArrayList<>(users.values());
     }
 
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
@@ -44,7 +46,7 @@ public class UserController {
     @RequestMapping(value="/{id}", method=RequestMethod.PUT)
     public String putUser(@PathVariable Long id, @RequestBody User user) {
         User u = users.get(id);
-        u.setName(user.getName());
+        u.setUsername(user.getUsername());
         u.setAge(user.getAge());
         users.put(id, u);
         return "success";
