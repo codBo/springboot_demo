@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 @Configuration
@@ -16,14 +17,14 @@ public class RedisConfig {
 //    JedisConnectionFactory jedisConnectionFactory() {
 //        return new JedisConnectionFactory();
 //    }
-    @Bean
-    public RedisTemplate<String, User> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
-        RedisTemplate<String, User> template = new RedisTemplate<>();
-        template.setConnectionFactory(redisConnectionFactory);
-        template.setKeySerializer(new StringRedisSerializer());
-        template.setValueSerializer(new RedisObjectSerializer());
-        return template;
-    }
+//    @Bean
+//    public RedisTemplate<String, User> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+//        RedisTemplate<String, User> template = new RedisTemplate<>();
+//        template.setConnectionFactory(redisConnectionFactory);
+//        template.setKeySerializer(new StringRedisSerializer());
+//        template.setValueSerializer(new RedisObjectSerializer());
+//        return template;
+//    }
     /////////////////////////////////
 //    @Bean
 //    JedisConnectionFactory connectionFactory() {
@@ -35,17 +36,17 @@ public class RedisConfig {
 //        return redisTemplate.opsForValue();
 //    }
 //
-//    @Bean
-//    RedisTemplate<String, Integer> intRedisTemplate(JedisConnectionFactory connectionFactory) {
-//        RedisTemplate<String, Integer> redisTemplate = new RedisTemplate<>();
-//        redisTemplate.setConnectionFactory(connectionFactory);
-//        return redisTemplate;
-//    }
-//
-//    @Bean
-//    ValueOperations<String, Integer> intOperations(RedisTemplate<String, Integer> redisTemplate) {
-//        return redisTemplate.opsForValue();
-//    }
+    @Bean
+    RedisTemplate<String, Integer> intRedisTemplate(JedisConnectionFactory connectionFactory) {
+        RedisTemplate<String, Integer> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(connectionFactory);
+        return redisTemplate;
+    }
+////
+    @Bean
+    ValueOperations<String, Integer> intOperations(RedisTemplate<String, Integer> redisTemplate) {
+        return redisTemplate.opsForValue();
+    }
 //
 //    @Bean
 //    Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer(ObjectMapper objectMapper) {

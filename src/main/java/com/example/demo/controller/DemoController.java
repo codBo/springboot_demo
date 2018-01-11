@@ -7,6 +7,7 @@ import com.example.demo.exception.MyException;
 import com.example.demo.repository.ResourceRepository;
 import com.example.demo.util.MessageUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import java.util.List;
  * Created by brian on 2017/8/24.
  */
 @RestController
+@Slf4j
 @RequestMapping(value="/resources")
 public class DemoController {
 
@@ -75,5 +77,14 @@ public class DemoController {
     @RequestMapping("/json")
     public String json() throws MyException {
         throw new MyException("发生错误2");
+    }
+    @RequestMapping("/testLogging")
+    public void testLogging() {
+
+        log.trace("======trace");
+        log.debug("======debug");
+        log.info("======info");
+        log.warn("======warn");
+        log.error("======error");
     }
 }
